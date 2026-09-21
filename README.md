@@ -132,12 +132,3 @@ Iteration
 
 Architectural decisions should be justified by the requirements of the system and should explicitly consider their trade-offs.
 
-## Current Status
-
-**Phase:** Initial development
-**Current focus:** Order Management
-**Domain:** Custom Plastic Manufacturing / ETO
-
-### Next
-
-Define and implement the initial CUFACT Salesforce data model and Order lifecycle.
