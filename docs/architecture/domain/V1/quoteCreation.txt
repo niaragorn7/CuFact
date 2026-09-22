@@ -1,0 +1,7 @@
+Keeping it very simple
+Customer
+   │
+   └── Quote
+         │
+         ├── Product
+         └── Specifications
