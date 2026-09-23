@@ -1,2 +1,0 @@
-Simple system where users can create a quote with several parameters to then submit it, store it on AWS and being able to retrieve it. 
-Where AWS will be working as the ERP where further developments will be included.

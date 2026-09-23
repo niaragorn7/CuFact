@@ -1,134 +1,26 @@
-# CUFACT
+# Ordane
 
-## Custom Manufacturing Enterprise Platform
+Ordane is a portfolio project: a B2B order-management platform built as an evolving system rather than a single deliverable, moving from a standalone backend to an integrated, cloud-deployed platform.
 
-CUFACT is an enterprise platform for **custom plastic manufacturing**, initially focused on **Engineer-to-Order (ETO)** operations.
+## Systems
 
-The project starts as a focused ERP around **Order Management** and progressively evolves into a broader enterprise platform covering quoting, pricing, production, data, machine learning, automation, and AI.
+- **Business Application** — Salesforce (Apex, LWC, automation) — customer-facing front end for order submission and tracking
+- **Backend Platform** — Go, Gin, PostgreSQL — owns the order domain and acts as the system of record
+- **Mobile Application** — iOS (Swift) — native client consuming the backend API
 
-The goal is not to build a technology showcase. The goal is to build a coherent system and introduce complexity only when the business or technical requirements justify it.
+## Project Stages
 
-## Architecture Vision
+1. **Order Management Core** — Domain model: customers, products, orders, order lifecycle
+2. **Backend Platform** — Go API, business rules, PostgreSQL persistence
+3. **Business Application** — Salesforce customer and order management
+4. **System Integration** — Salesforce ↔ API integration
+5. **Cloud Deployment** — AWS, containers, CI/CD, monitoring
+6. **Asynchronous Processing** — Events, queues, workers, retries
+7. **Mobile Application** — Native iOS client
+8. **Analytics Platform** — Reporting and analytical workloads
 
-CUFACT is designed around two tightly integrated layers:
+## Repository
 
-**Salesforce**
-The primary enterprise interface where users interact with customers, products, orders, configurations, workflows, and business processes.
-
-**AWS**
-The operational backend responsible for services, processing, persistence, pricing, production workloads, data, and machine learning.
-
-The two platforms communicate bidirectionally:
-
-```text
-                    CUFACT
-                      │
-          ┌───────────┴───────────┐
-          │                       │
-      Salesforce                AWS
-    User / Business         Operational Backend
-          │                       │
-          │    Integration        │
-          └───────────↔───────────┘
-                                  │
-                       ┌──────────┼──────────┐
-                       │          │          │
-                    Python    Data/ML    Production
-                    Services  /SageMaker  Services
-```
-
-## Development Roadmap
-
-The platform will be developed progressively through independent stages.
-
-| Stage | Focus                               |
-| ----- | ----------------------------------- |
-| 1     | Salesforce Foundation               |
-| 2     | Configuration & Quoting             |
-| 3     | AWS Core Backend                    |
-| 4     | Salesforce ↔ AWS Integration        |
-| 5     | Python Pricing Engine               |
-| 6     | Production Operations               |
-| 7     | Data Platform & Analytics           |
-| 8     | SageMaker & Predictive Intelligence |
-| 9     | Automation & Agentforce             |
-| 10    | Enterprise Architecture             |
-
-The roadmap is intentionally flexible. Stages may be modified, reordered, expanded, or replaced as the system evolves.
-
-## Initial Scope
-
-The first version of CUFACT focuses on **Order Management**.
-
-Initial flow:
-
-```text
-Customer
-   ↓
-Order
-   ↓
-Order Items
-   ↓
-Product / Configuration
-   ↓
-Production
-   ↓
-Status Updates
-```
-
-The first objective is to establish a strong Salesforce foundation and a functional order lifecycle before introducing more advanced infrastructure.
-
-## Engineering Goals
-
-CUFACT is also a practical engineering and architecture project.
-
-The project will be used to explore:
-
-* Enterprise data modeling
-* Salesforce architecture
-* API design
-* Salesforce ↔ AWS integration
-* Python backend development
-* Distributed systems
-* Synchronous and asynchronous processing
-* Data ownership and synchronization
-* Pricing engines
-* Data pipelines
-* Machine learning with SageMaker
-* Automation
-* Agentforce
-* Security
-* Observability
-* Scalability
-* Resilience and disaster recovery
-
-## Development Philosophy
-
-The project follows a simple principle:
-
-> **Problem first. Technology second.**
-
-We will not introduce a technology simply because it is interesting.
-
-Instead:
-
-```text
-Problem
-   ↓
-Requirements
-   ↓
-Proposed Solution
-   ↓
-Architecture Decision
-   ↓
-Implementation
-   ↓
-Testing
-   ↓
-Review
-   ↓
-Iteration
-```
-
-Architectural decisions should be justified by the requirements of the system and should explicitly consider their trade-offs.
-
+- `docs/architecture/` — Architecture decisions, diagrams, domain documentation
+- `evolution/` — Project evolution and milestones
+- `proposals/` — Proposed features and architectural changes
